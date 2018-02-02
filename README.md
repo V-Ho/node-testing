@@ -25,3 +25,17 @@ Assertion Library: jackson
     
     run $ npm install expect@1.20.2 --save-dev
     run $ npm run test-watch
+    
+Making Asynchronous tests:
+    1. Call it to describe new test
+    2. Pass in description and callback, called when test executes
+    3. If asynchronous, pass in Done to tell Mocha to wait before determining
+    whether or not test passed
+    4. Call utils function and pass in args needed, store var as result
+    5. If asynchronous, pass in callback which stores result
+    6. Use Expect library to make assertions about result (accuracy, type)
+    7. If asynchronous, call done otherwise test won't finish
+
+
+ 
+ 
