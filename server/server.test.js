@@ -46,3 +46,18 @@ it('should get a username object as response', (done) => {
 })
 
 //npm run test-watch
+
+/*
+- Asynchronous test that passes in (done) so mocha knows to wait
+before determining in test passed or failed
+- call request, passing in express app
+- chain together assertions (expect, get, put, delete, etc)
+- call .end with (done) in callback to complete test in supertest
+ */
+
+it('should return a meow msg', (done) => {
+  request(app)
+    .get('/meow')
+    .expect('Content-Type', 'text/html; charset=utf-8')
+    .end(done)
+})
